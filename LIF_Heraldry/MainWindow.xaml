@@ -1,0 +1,39 @@
+﻿<Window x:Class="LIF_Heraldry.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LIF_Heraldry"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="LIF Heraldry" MinHeight="100"  AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" Width="280" ShowInTaskbar="False" ResizeMode="NoResize" MaxHeight="560" Height="100"
+        
+        VerticalAlignment="Bottom" HorizontalAlignment="Right" Topmost="True" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/ScrollBar.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>        
+        <Rectangle Stroke="LightSlateGray" Fill="#4C000000" Margin="0,0,0,30"/>
+        <ScrollViewer x:Name="ScrollNotify" VerticalScrollBarVisibility="Visible" Margin="1,1,1,30">
+            <StackPanel x:Name="StackNotify" Margin="0" CanVerticallyScroll="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
+        </ScrollViewer>
+        <Border x:Name="DragBar" Height="30" Background="LightSlateGray" VerticalAlignment="Bottom" Cursor="SizeAll" CornerRadius="0,0,10,10" MouseLeftButtonDown="DragBar_MouseLeftButtonDown"/>        
+        <Button x:Name="configBt" ToolTip="Configuration" Style="{StaticResource EllipseButton}" Width="25" Height="25" VerticalAlignment="Bottom" Margin="0,0,10,3" HorizontalAlignment="Right" Click="configBt_Click" Cursor="Hand">
+            <fa:ImageAwesome Icon="Gear" Foreground="White" Margin="0" Width="15" HorizontalAlignment="Left" />
+        </Button>
+        <Button x:Name="toggleBt" IsEnabled="False" ToolTip="Toggle compact" Style="{StaticResource EllipseButton}" Width="25" Height="25" VerticalAlignment="Bottom" Margin="0,0,45,3" HorizontalAlignment="Right" Click="toggleBt_Click" Cursor="Hand">
+            <fa:ImageAwesome x:Name="toggleIcon" Icon="AngleDown" Foreground="White" Margin="0" Width="15" HorizontalAlignment="Left" />
+        </Button>
+        <Button x:Name="exitBt" ToolTip="Exit" Style="{StaticResource EllipseButton}" Background="#FF8F1F1F" Width="25" Height="25" VerticalAlignment="Bottom" Margin="10,0,10,3" HorizontalAlignment="left" Click="exitBt_Click" Cursor="Hand">
+            <fa:ImageAwesome Icon="Close" Foreground="White" Margin="0" Width="15" HorizontalAlignment="Left" />
+        </Button>
+        <Button x:Name="InfoBt" ToolTip="Info" Style="{StaticResource EllipseButton}" Background="#FF0055BB" Width="25" Height="25" VerticalAlignment="Bottom" Margin="45,0,10,3" HorizontalAlignment="left" Click="InfoBt_Click" Cursor="Hand">
+            <fa:ImageAwesome Icon="Info" Foreground="White" Margin="0" Width="7" HorizontalAlignment="Left" />
+        </Button>
+        <Label x:Name="timeLb" VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="-" Margin="0,0,0,3" FontWeight="Bold" MouseLeftButtonDown="DragBar_MouseLeftButtonDown" Cursor="SizeAll"/>
+    </Grid>
+</Window>

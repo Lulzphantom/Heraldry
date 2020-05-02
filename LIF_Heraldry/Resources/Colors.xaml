@@ -1,0 +1,68 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:LIF_Heraldry.Resources">
+
+    <!-- Primary color default -->
+    <SolidColorBrush x:Key="DefaultBlack" Color="#212121"/>
+
+    <!-- Primary Colors -->
+    <SolidColorBrush x:Key="212121" Color="#212121"/>
+    <SolidColorBrush x:Key="3e2723" Color="#3e2723"/>
+    <SolidColorBrush x:Key="e51c23" Color="#e51c23"/>
+    <SolidColorBrush x:Key="e91e63" Color="#e91e63"/>
+    <SolidColorBrush x:Key="9c27b0" Color="#9c27b0"/>
+    <SolidColorBrush x:Key="673ab7" Color="#673ab7"/>
+    <SolidColorBrush x:Key="3f51b5" Color="#3f51b5"/>
+    <SolidColorBrush x:Key="5677fc" Color="#5677fc"/>
+    <SolidColorBrush x:Key="03a9f4" Color="#03a9f4"/>
+    <SolidColorBrush x:Key="00bcd4" Color="#00bcd4"/>
+    <SolidColorBrush x:Key="009688" Color="#009688"/>
+    <SolidColorBrush x:Key="259b24" Color="#259b24"/>
+    <SolidColorBrush x:Key="8bc34a" Color="#8bc34a"/>
+    <SolidColorBrush x:Key="cddc39" Color="#cddc39"/>
+    <SolidColorBrush x:Key="ffeb3b" Color="#ffeb3b"/>
+    <SolidColorBrush x:Key="ffc107" Color="#ffc107"/>
+    <SolidColorBrush x:Key="ff9800" Color="#ff9800"/>
+    <SolidColorBrush x:Key="ff5722" Color="#ff5722"/>
+
+    <!-- Dark Colors - key based on primary color -->
+    <SolidColorBrush x:Key="dark212121" Color="#000000"/>
+    <SolidColorBrush x:Key="dark3e2723" Color="#1b0000"/>
+    <SolidColorBrush x:Key="darke51c23" Color="#d01716"/>
+    <SolidColorBrush x:Key="darke91e63" Color="#c2185b"/>
+    <SolidColorBrush x:Key="dark9c27b0" Color="#7b1fa2"/>
+    <SolidColorBrush x:Key="dark673ab7" Color="#512da8"/>
+    <SolidColorBrush x:Key="dark3f51b5" Color="#303f9f"/>
+    <SolidColorBrush x:Key="dark5677fc" Color="#455ede"/>
+    <SolidColorBrush x:Key="dark03a9f4" Color="#0288d1"/>
+    <SolidColorBrush x:Key="dark00bcd4" Color="#0097a7"/>
+    <SolidColorBrush x:Key="dark009688" Color="#00796b"/>
+    <SolidColorBrush x:Key="dark259b24" Color="#0a7e07"/>
+    <SolidColorBrush x:Key="dark8bc34a" Color="#689f38"/>
+    <SolidColorBrush x:Key="darkcddc39" Color="#afb42b"/>
+    <SolidColorBrush x:Key="darkffeb3b" Color="#fbc02d"/>
+    <SolidColorBrush x:Key="darkffc107" Color="#ffa000"/>
+    <SolidColorBrush x:Key="darkff9800" Color="#f57c00"/>
+    <SolidColorBrush x:Key="darkff5722" Color="#e64a19"/>
+
+    <!-- Accent Colrs - key based on primary color-->
+    <SolidColorBrush x:Key="accent212121" Color="#484848"/>
+    <SolidColorBrush x:Key="accent3e2723" Color="#6a4f4b"/>
+    <SolidColorBrush x:Key="accente51c23" Color="#ff5177"/>
+    <SolidColorBrush x:Key="accente91e63" Color="#ff4081"/>
+    <SolidColorBrush x:Key="accent9c27b0" Color="#e040fb"/>
+    <SolidColorBrush x:Key="accent673ab7" Color="#7c4dff"/>
+    <SolidColorBrush x:Key="accent3f51b5" Color="#536dfe"/>
+    <SolidColorBrush x:Key="accent5677fc" Color="#6889ff"/>
+    <SolidColorBrush x:Key="accent03a9f4" Color="#40c4ff"/>
+    <SolidColorBrush x:Key="accent00bcd4" Color="#18ffff"/>
+    <SolidColorBrush x:Key="accent009688" Color="#64ffda"/>
+    <SolidColorBrush x:Key="accent259b24" Color="#5af158"/>
+    <SolidColorBrush x:Key="accent8bc34a" Color="#b2ff59"/>
+    <SolidColorBrush x:Key="accentcddc39" Color="#eeff41"/>
+    <SolidColorBrush x:Key="accentffeb3b" Color="#ffff00"/>
+    <SolidColorBrush x:Key="accentffc107" Color="#ffd740"/>
+    <SolidColorBrush x:Key="accentff9800" Color="#ffab40"/>
+    <SolidColorBrush x:Key="accentff5722" Color="#ff6e40"/>
+
+</ResourceDictionary>
