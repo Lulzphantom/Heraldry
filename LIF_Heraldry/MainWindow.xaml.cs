@@ -30,22 +30,36 @@ namespace LIF_Heraldry
         double lastHeight;
         static string cacheRoute = @"\game\eu\art\Textures\Heraldry\Cache";
         private MediaPlayer mediaPlayer = new MediaPlayer();
-        ColorAnimation colorChangeAnimation;
+        ColorAnimation colorChangeAnimation = new ColorAnimation();
 
         public MainWindow()
         {
             InitializeComponent();
+
+            Config.CheckConfig();
+            Opacity = Config.Opacity;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            // Try to clear game cache data before read any
+            clearCache();
 
-            Config.CheckConfig();
-
-            Opacity = Config.Opacity;
+            Point location;
 
             // Set default working area
-            var location = new Point(SystemParameters.WorkArea.Width - Width, SystemParameters.WorkArea.Height - Height);
+            if (Config.Top == 0 || Config.Left == 0) 
+            {
+                location = new Point(SystemParameters.WorkArea.Width - Width, SystemParameters.WorkArea.Height - Height);
+                Config.Left = location.X;
+                Config.Top = location.Y;
+                Config.SaveConfig();
+            }
+            else
+            {
+                location = new Point(Config.Left, Config.Top);
+            }
+
             Left = location.X;
             Top = location.Y;
 
@@ -56,13 +70,24 @@ namespace LIF_Heraldry
             timer.Start();
 
             // Item color animation
-            colorChangeAnimation = new ColorAnimation();
             colorChangeAnimation.From = Color.FromArgb(200, 0, 0, 0);
             colorChangeAnimation.To = Color.FromArgb(200, 160, 0, 0);
             colorChangeAnimation.Duration = TimeSpan.FromMilliseconds(400);
 
             mediaPlayer.Open(new Uri("pack://application:,,,/Assets/alert.mp3"));
             
+        }
+
+        void clearCache()
+        {
+            try
+            {
+                Directory.Delete(Config.LifRoute + cacheRoute);
+                Console.WriteLine("Cache deleted");
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -219,6 +244,10 @@ namespace LIF_Heraldry
         private void DragBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+            Config.Left = Left;
+            Config.Top = Top;
+            Config.SaveConfig();
+
         }
 
         private string getTabardId(string filename)
@@ -238,7 +267,7 @@ namespace LIF_Heraldry
 
         private void InfoBt_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Developed by Lulzphantom, https://github.com/Lulzphantom , Guild: Realis Regnum");
+            MessageBox.Show($"Developed by Lulzphantom {Environment.NewLine}Guild: Realis Regnum {Environment.NewLine}Check new releases: https://github.com/Lulzphantom/Heraldry/releases");
         }
         
         private void toggleBt_Click(object sender, RoutedEventArgs e)
@@ -250,6 +279,21 @@ namespace LIF_Heraldry
             toggleIcon.Icon = toggleDown ? FontAwesomeIcon.AngleUp : FontAwesomeIcon.AngleDown;
             Height = toggleDown ? 100 : lastHeight;
             
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            clearCache();
+        }
+
+        private void DragBar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+           // Console.WriteLine("UP");
+        }
+
+        private void DragBar_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Console.WriteLine("UP");
         }
     }
 }

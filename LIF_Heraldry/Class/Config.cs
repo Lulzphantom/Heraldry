@@ -10,10 +10,16 @@ namespace LIF_Heraldry
 {
     public static class Config
     {
+        // Config file name
         static string Cfg = "Cfg.dat";
 
+        // User preference
         public static double Opacity { get; set; } = 1;
         public static string LifRoute { get; set; } = "";
+
+        // Position config
+        public static double Top { get; set; } = 0;
+        public static double Left { get; set; } = 0;
 
         public static void CheckConfig()
         {
@@ -25,8 +31,15 @@ namespace LIF_Heraldry
                 if (data["Configuration"]["opacity"] != null)
                 {
                     Opacity = Convert.ToDouble(data["Configuration"]["opacity"]);
-                    Console.WriteLine(Opacity);
-                }                
+                }
+                if (data["Configuration"]["left"] != null)
+                {
+                    Left = Convert.ToDouble(data["Configuration"]["left"]);
+                }
+                if (data["Configuration"]["top"] != null)
+                {
+                    Top = Convert.ToDouble(data["Configuration"]["top"]);
+                }
             }
             else
             {
@@ -41,6 +54,8 @@ namespace LIF_Heraldry
                 IniData data = new IniData();
                 data["Configuration"]["game_route"] = LifRoute;
                 data["Configuration"]["opacity"] = Opacity.ToString();
+                data["Configuration"]["left"] = Left.ToString();
+                data["Configuration"]["top"] = Top.ToString();
                 parser.WriteFile(AppDomain.CurrentDomain.BaseDirectory + @"\" + Cfg, data);
             }
             catch (Exception ex)
@@ -59,6 +74,8 @@ namespace LIF_Heraldry
                 data.Sections.AddSection("Configuration");
                 data["Configuration"].AddKey("game_route", LifRoute);
                 data["Configuration"].AddKey("opacity", Opacity.ToString());
+                data["Configuration"].AddKey("left", Left.ToString());
+                data["Configuration"].AddKey("top", Top.ToString());
                 parser.WriteFile(AppDomain.CurrentDomain.BaseDirectory + @"\" + Cfg, data);
             }
             catch (Exception ex)
