@@ -21,4 +21,4 @@ ___
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: https://github.com/Lulzphantom/XPlane-DataOutputReceiver-Dart/issues
+[tracker]: https://github.com/Lulzphantom/Heraldry/issues
