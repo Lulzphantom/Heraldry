@@ -1,9 +1,6 @@
 # LIF Heraldry 
-
-[![release](https://img.shields.io/github/v/release/Lulzphantom/Heraldry?label=Download)](https://github.com/Lulzphantom/Heraldry/releases/latest)
 [![lastcommit](https://img.shields.io/github/last-commit/Lulzphantom/Heraldry?label=Updated)](https://github.com/Lulzphantom/Heraldry/commits/master)
-![release](https://img.shields.io/github/downloads-pre/Lulzphantom/Heraldry/latest/total?label=Pre-release%20downloads)
-![release](https://img.shields.io/github/downloads/Lulzphantom/Heraldry/total/total?label=Release%20downloads)
+[![release](https://img.shields.io/github/downloads/Lulzphantom/Heraldry/total)](https://github.com/Lulzphantom/Heraldry/releases/latest)
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N6ZFXV7WTBWG2)
 
 ### Life is Feudal MMO tool
